@@ -1,3 +1,4 @@
+const zero = document.getElementById('zero')
 const one = document.getElementById('one')
 const two = document.getElementById('two')
 const three = document.getElementById('three')
@@ -8,59 +9,126 @@ const seven = document.getElementById('seven')
 const eight = document.getElementById('eight')
 const nine = document.getElementById('nine')
 const plus = document.getElementById('plus')
-const minus= document.getElementById('minus')
+const minus = document.getElementById('minus')
 const divide = document.getElementById('divide')
 const multply = document.getElementById('multply')
 const clear = document.getElementById('clear')
 const AClear = document.getElementById('AClear')
+const equal = document.getElementById('Equal')
+
 
 const input = document.getElementById("inputField")
+finalInput = ""
+secondInput = ""
+initalInput = ""
+
+function error(){
+  if (initalInput.length === 8) {
+    input.value = "ERR"
+    setTimeout(() => {
+      input.value = ""
+      initalInput = ""
+    }, "1000")
+  }
+}
+
+zero.addEventListener("click",function(){
+  error()
+  if (initalInput.length <= 8 - 1) {
+    initalInput += '0'
+    input.value += '0'
+  }
+})
+one.addEventListener("click", function() {
+  error()
+  if (initalInput.length <= 8 - 1) {
+    initalInput += '1'
+    input.value += '1'
+  }
+})
+two.addEventListener("click", function() {
+  error()
+  if (initalInput.length <= 8 - 1) {
+    initalInput += '2'
+    input.value += '2'
+  }
+})
+three.addEventListener("click", function() {
+  error()
+  if (initalInput.length <= 8 - 1) {
+    initalInput += '3'
+    input.value += '3'
+  }
+})
+four.addEventListener("click", function() {
+  error()
+  if (initalInput.length <= 8 - 1) {
+    initalInput += '4'
+    input.value += '4'
+  }
+})
+five.addEventListener("click", function() {
+  error()
+  if (initalInput.length <= 8 - 1) {
+    initalInput += '5'
+    input.value += '5'
+  }
+})
+six.addEventListener("click", function() {
+  error()
+  if (initalInput.length <= 8 - 1) {
+    initalInput += '6'
+    input.value += '6'
+  }
+})
+seven.addEventListener("click", function() {
+  error()
+  if (initalInput.length <= 8 - 1) {
+    initalInput += '7'
+    input.value += '7'
+  }
+})
+eight.addEventListener("click", function() {
+  error()
+  if (initalInput.length <= 8 - 1) {
+    initalInput += '8'
+    input.value += '8'
+  }
+})
+nine.addEventListener("click", function() {
+  error()
+  if (initalInput.length <= 8 - 1) {
+    initalInput += '9'
+    input.value += '9'
+  }
+})
 
 
-one.addEventListener("click",function(){
-  console.log("one")
+
+
+
+
+plus.addEventListener("click", function() {
+  input.value += "+"
 })
-two.addEventListener("click",function(){
-  console.log("two")
+minus.addEventListener("click", function() {
+  input.value += "-"
 })
-three.addEventListener("click",function(){
-  console.log("three")
+divide.addEventListener("click", function() {
+  input.value += "/"
 })
-four.addEventListener("click",function(){
-  console.log("four")
+multply.addEventListener("click", function() {
+  input.value += "*"
 })
-five.addEventListener("click",function(){
-  console.log("five")
+clear.addEventListener("click", function() {
+  finalInput = ""
+  input.value = ""
 })
-six.addEventListener("click",function(){
-  console.log("six")
+AClear.addEventListener("click", function() {
+  input.value = ""
+  initalInput = ""
 })
-seven.addEventListener("click",function(){
-  console.log("seven")
-})
-eight.addEventListener("click",function(){
-  console.log("eight")
-})
-nine.addEventListener("click",function(){
-  console.log("nine")
-})
-plus.addEventListener("click",function(){
-  console.log("plus")
-})
-minus.addEventListener("click",function(){
-  console.log("minus")
-})
-divide.addEventListener("click",function(){
-  console.log("divide")
-})
-multply.addEventListener("click",function(){
-  console.log("multply")
-})
-clear.addEventListener("click",function(){
-  console.log("clear")
-})
-AClear.addEventListener("click",function(){
-  console.log("AClear")
-})
+
+
 
 
