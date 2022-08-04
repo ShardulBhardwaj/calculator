@@ -104,31 +104,34 @@ nine.addEventListener("click", function() {
 })
 
 
-
-
-
-
 plus.addEventListener("click", function() {
+  input.value = ""
+  secondInput += initalInput
   input.value += "+"
+
 })
 minus.addEventListener("click", function() {
+  input.value = ""
+  secondInput += initalInput  
   input.value += "-"
 })
 divide.addEventListener("click", function() {
+  input.value = ""
+  secondInput += initalInput  
   input.value += "/"
 })
 multply.addEventListener("click", function() {
+  input.value = ""
+  secondInput += initalInput  
   input.value += "*"
 })
 clear.addEventListener("click", function() {
+  
   finalInput = ""
   input.value = ""
 })
 AClear.addEventListener("click", function() {
+  
   input.value = ""
   initalInput = ""
 })
-
-
-
-
