@@ -15,12 +15,13 @@ const multply = document.getElementById('multply')
 const clear = document.getElementById('clear')
 const AClear = document.getElementById('AClear')
 const equal = document.getElementById('Equal')
-
-
 const input = document.getElementById("inputField")
+
 finalInput = ""
 secondInput = ""
 initalInput = ""
+signPressed = false 
+
 
 function error(){
   if (initalInput.length === 8) {
@@ -106,24 +107,30 @@ nine.addEventListener("click", function() {
 
 plus.addEventListener("click", function() {
   input.value = ""
-  secondInput += initalInput
+  secondInput += initalInput + " +"
   input.value += "+"
-
+  if (signPressed === true){
+    secondInput.replace("")
+  }
+  signPressed = true
 })
 minus.addEventListener("click", function() {
   input.value = ""
-  secondInput += initalInput  
+  secondInput += initalInput + " -"  
   input.value += "-"
+  signPressed = true
 })
 divide.addEventListener("click", function() {
   input.value = ""
-  secondInput += initalInput  
+  secondInput += initalInput + " /"  
   input.value += "/"
+  signPressed = true
 })
 multply.addEventListener("click", function() {
   input.value = ""
-  secondInput += initalInput  
-  input.value += "*"
+  secondInput += initalInput + " *"  
+  input.value += "x"
+  signPressed = true
 })
 clear.addEventListener("click", function() {
   
@@ -135,3 +142,4 @@ AClear.addEventListener("click", function() {
   input.value = ""
   initalInput = ""
 })
+
