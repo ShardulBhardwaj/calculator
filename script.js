@@ -38,6 +38,7 @@ zero.addEventListener("click",function(){
   if (initalInput.length <= 8 - 1) {
     initalInput += '0'
     input.value += '0'
+    signPressed = false
   }
 })
 one.addEventListener("click", function() {
@@ -45,6 +46,7 @@ one.addEventListener("click", function() {
   if (initalInput.length <= 8 - 1) {
     initalInput += '1'
     input.value += '1'
+    signPressed = false
   }
 })
 two.addEventListener("click", function() {
@@ -52,6 +54,7 @@ two.addEventListener("click", function() {
   if (initalInput.length <= 8 - 1) {
     initalInput += '2'
     input.value += '2'
+    signPressed = false
   }
 })
 three.addEventListener("click", function() {
@@ -59,6 +62,7 @@ three.addEventListener("click", function() {
   if (initalInput.length <= 8 - 1) {
     initalInput += '3'
     input.value += '3'
+    signPressed = false
   }
 })
 four.addEventListener("click", function() {
@@ -66,6 +70,7 @@ four.addEventListener("click", function() {
   if (initalInput.length <= 8 - 1) {
     initalInput += '4'
     input.value += '4'
+    signPressed = false
   }
 })
 five.addEventListener("click", function() {
@@ -73,6 +78,7 @@ five.addEventListener("click", function() {
   if (initalInput.length <= 8 - 1) {
     initalInput += '5'
     input.value += '5'
+    signPressed = false
   }
 })
 six.addEventListener("click", function() {
@@ -80,6 +86,7 @@ six.addEventListener("click", function() {
   if (initalInput.length <= 8 - 1) {
     initalInput += '6'
     input.value += '6'
+    signPressed = false
   }
 })
 seven.addEventListener("click", function() {
@@ -87,6 +94,7 @@ seven.addEventListener("click", function() {
   if (initalInput.length <= 8 - 1) {
     initalInput += '7'
     input.value += '7'
+    signPressed = false
   }
 })
 eight.addEventListener("click", function() {
@@ -94,6 +102,7 @@ eight.addEventListener("click", function() {
   if (initalInput.length <= 8 - 1) {
     initalInput += '8'
     input.value += '8'
+    signPressed = false
   }
 })
 nine.addEventListener("click", function() {
@@ -101,39 +110,50 @@ nine.addEventListener("click", function() {
   if (initalInput.length <= 8 - 1) {
     initalInput += '9'
     input.value += '9'
+    signPressed = false
   }
 })
 
 
 plus.addEventListener("click", function() {
-  input.value = ""
-  secondInput += initalInput + " +"
-  input.value += "+"
-  if (signPressed === true){
-    secondInput.replace("")
+  if(signPressed === false){
+    signPressed = true
+    initalInput += "+"
+    input.value += "+"
+    secondInput += initalInput
+    initalInput = ""
   }
-  signPressed = true
 })
 minus.addEventListener("click", function() {
-  input.value = ""
-  secondInput += initalInput + " -"  
-  input.value += "-"
-  signPressed = true
+  if(signPressed === false){
+    signPressed = true
+    initalInput += "-"
+    input.value += "-"
+    secondInput += initalInput
+    initalInput = ""
+  }
 })
 divide.addEventListener("click", function() {
-  input.value = ""
-  secondInput += initalInput + " /"  
-  input.value += "/"
-  signPressed = true
+  if(signPressed === false){
+    signPressed = true
+    initalInput += "/"
+    input.value += "/"
+    secondInput += initalInput 
+    initalInput = ""
+  }
 })
 multply.addEventListener("click", function() {
-  input.value = ""
-  secondInput += initalInput + " *"  
-  input.value += "x"
-  signPressed = true
+  if(signPressed === false){
+    signPressed = true
+    initalInput += "*"
+    input.value += "x"
+    secondInput += initalInput 
+    initalInput = ""
+  }
 })
 clear.addEventListener("click", function() {
-  
+  secondInput = ""
+  initalInput = ""
   finalInput = ""
   input.value = ""
 })
@@ -142,4 +162,11 @@ AClear.addEventListener("click", function() {
   input.value = ""
   initalInput = ""
 })
+
+equal.addEventListener("click", function(){
+ 
+
+})
+
+
 
